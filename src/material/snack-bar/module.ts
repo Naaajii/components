@@ -14,10 +14,21 @@ import {MatCommonModule} from '@angular/material/core';
 
 import {SimpleSnackBar} from './simple-snack-bar';
 import {MatSnackBarContainer} from './snack-bar-container';
-import {MatSnackBarAction, MatSnackBarActions, MatSnackBarLabel} from './snack-bar-content';
+import {
+  MatSnackBarAction,
+  MatSnackBarActions,
+  MatSnackBarClose,
+  MatSnackBarLabel,
+} from './snack-bar-content';
 import {MatSnackBar} from './snack-bar';
 
-const DIRECTIVES = [MatSnackBarContainer, MatSnackBarLabel, MatSnackBarActions, MatSnackBarAction];
+const DIRECTIVES = [
+  MatSnackBarContainer,
+  MatSnackBarLabel,
+  MatSnackBarActions,
+  MatSnackBarAction,
+  MatSnackBarClose,
+];
 
 @NgModule({
   imports: [

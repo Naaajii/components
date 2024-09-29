@@ -55,4 +55,7 @@ export class MatSnackBarConfig<D = any> {
 
   /** The vertical position to place the snack bar. */
   verticalPosition?: MatSnackBarVerticalPosition = 'bottom';
+
+  /** Whether the snackbar should show close button. */
+  closeable?: boolean = false;
 }

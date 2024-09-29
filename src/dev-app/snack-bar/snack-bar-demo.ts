@@ -57,6 +57,7 @@ export class SnackBarDemo {
   addExtraClass = false;
   horizontalPosition: MatSnackBarHorizontalPosition = 'center';
   verticalPosition: MatSnackBarVerticalPosition = 'bottom';
+  closeable = false;
 
   open() {
     const config = this._createConfig();
@@ -75,6 +76,7 @@ export class SnackBarDemo {
     config.duration = this.setAutoHide ? this.autoHide : 0;
     config.panelClass = this.addExtraClass ? ['demo-party'] : undefined;
     config.direction = this._dir.value;
+    config.closeable = this.closeable;
     return config;
   }
 }

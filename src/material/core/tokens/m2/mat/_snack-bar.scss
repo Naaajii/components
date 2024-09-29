@@ -17,7 +17,8 @@ $prefix: (mat, snack-bar);
 
   @return (
     button-color: if(
-        $is-dark, rgba(0, 0, 0, 0.87), inspection.get-theme-color($theme, accent, text))
+        $is-dark, rgba(0, 0, 0, 0.87), inspection.get-theme-color($theme, accent, text)),
+    icon-color: red
   );
 }
 

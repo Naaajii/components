@@ -128,7 +128,7 @@ export class MatSnackBar implements OnDestroy {
 
     // Since the user doesn't have access to the component, we can
     // override the data to pass in our own message and action.
-    _config.data = {message, action};
+    _config.data = {message, action, closeable: _config.closeable};
 
     // Since the snack bar has `role="alert"`, we don't
     // want to announce the same message twice.

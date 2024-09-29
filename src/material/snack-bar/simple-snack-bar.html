@@ -9,3 +9,11 @@
     </button>
   </div>
 }
+
+@if (hasClose) {
+  <div matSnackBarActions>
+    <button mat-icon-button matSnackBarClose (click)="close()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+}

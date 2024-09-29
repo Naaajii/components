@@ -37,3 +37,12 @@ export class MatSnackBarActions {}
   },
 })
 export class MatSnackBarAction {}
+
+@Directive({
+  selector: `[matSnackBarClose]`,
+  standalone: true,
+  host: {
+    'class': 'mat-mdc-snack-bar-close mdc-snackbar__close',
+  },
+})
+export class MatSnackBarClose {}

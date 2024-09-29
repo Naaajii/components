@@ -7,10 +7,16 @@
  */
 
 import {ChangeDetectionStrategy, Component, ViewEncapsulation, inject} from '@angular/core';
-import {MatButton} from '@angular/material/button';
+import {MatButton, MatIconButton} from '@angular/material/button';
 import {MatSnackBarRef} from './snack-bar-ref';
 import {MAT_SNACK_BAR_DATA} from './snack-bar-config';
-import {MatSnackBarAction, MatSnackBarActions, MatSnackBarLabel} from './snack-bar-content';
+import {
+  MatSnackBarAction,
+  MatSnackBarActions,
+  MatSnackBarClose,
+  MatSnackBarLabel,
+} from './snack-bar-content';
+import {MatIcon} from '@angular/material/icon';
 
 /**
  * Interface for a simple snack bar component that has a message and a single action.
@@ -20,6 +26,7 @@ export interface TextOnlySnackBar {
   snackBarRef: MatSnackBarRef<TextOnlySnackBar>;
   action: () => void;
   hasAction: boolean;
+  close: () => void;
 }
 
 @Component({
@@ -29,7 +36,15 @@ export interface TextOnlySnackBar {
   exportAs: 'matSnackBar',
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [MatButton, MatSnackBarLabel, MatSnackBarActions, MatSnackBarAction],
+  imports: [
+    MatButton,
+    MatIconButton,
+    MatSnackBarLabel,
+    MatSnackBarActions,
+    MatSnackBarAction,
+    MatSnackBarClose,
+    MatIcon,
+  ],
   standalone: true,
   host: {
     'class': 'mat-mdc-simple-snack-bar',
@@ -47,8 +62,18 @@ export class SimpleSnackBar implements TextOnlySnackBar {
     this.snackBarRef.dismissWithAction();
   }
 
+  /** Closes the snackbar */
+  close(): void {
+    this.snackBarRef.dismiss();
+  }
+
   /** If the action button should be shown. */
   get hasAction(): boolean {
     return !!this.data.action;
+  }
+
+  /** If the close button should be shown. */
+  get hasClose(): boolean {
+    return !!this.data.closeable;
   }
 }

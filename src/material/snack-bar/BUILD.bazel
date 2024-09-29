@@ -26,6 +26,7 @@ ng_module(
         "//src/cdk/portal",
         "//src/material/button",
         "//src/material/core",
+        "//src/material/icon",
         "@npm//@angular/core",
     ],
 )

@@ -12,6 +12,7 @@ $prefix: (mat, snack-bar);
 @function get-tokens($systems, $exclude-hardcoded, $token-slots) {
   $tokens: (
     button-color: map.get($systems, md-sys-color, inverse-primary),
+    icon-color: map.get($systems, md-sys-color, inverse-on-surface),
   );
 
   @return token-definition.namespace-tokens($prefix, $tokens, $token-slots);
