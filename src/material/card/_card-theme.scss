@@ -99,10 +99,6 @@
         tokens-mdc-outlined-card.get-density-tokens($theme)
       );
       @include token-utils.create-token-values(
-        tokens-mdc-outlined-card.$prefix,
-        tokens-mdc-outlined-card.get-density-tokens($theme)
-      );
-      @include token-utils.create-token-values(
         tokens-mdc-filled-card.$prefix,
         tokens-mdc-filled-card.get-density-tokens($theme)
       );
@@ -134,7 +130,7 @@
     (
       namespace: tokens-mdc-filled-card.$prefix,
       tokens: tokens-mdc-filled-card.get-token-slots(),
-      prefix: 'outlined-',
+      prefix: 'filled-',
     )
   );
 }
